@@ -13,9 +13,23 @@ it("should say hello", function() {
   expect(hello).with.lengthOf(5);
 });
 
-it("should return the area of a 5 by 6 rectangle");
+it("should return the area of a 5 by 6 rectangle", function() {
+  let width = 5;
+  let height = 6;
+  const area  = utils.area(w, h);
+  expect(height).to.be.a(number);
+  expect(width).to.be.a(number);
+  expect(area).to.be(30);
+});
 
-it("should return the are of a circle of radius 5");
+it("should return the area of a circle of radius 5", function() {
+  let radius = 5
+  const circleArea = utils.circleArea(r);
+  expect(Math.PI).to.be.a(number);
+  expect(radius).to.be.a(number);
+  expect(circleArea).to.be(78.5);
+});
+
 
 // ========================================================
 // Challenges
@@ -25,9 +39,23 @@ it("should return the are of a circle of radius 5");
 // of "Pending Tests" in Chai. Someone should write these
 // tests eventually.
 
-it("Should create a new (object) Item with name and price");
+it("Should create a new (object) Item with name and price", function(done) {
+  let object = new Object ({
+    name: 'Oranges',
+    price: 2.75
+  });
+  
+  object.save()
+    .then(() => {
+    assert(!object)
+  });
+  
+  done();
+    
+};
 
 it("Should return an array containing all items in cart");
+
 
 it("Should add a new item to the shopping cart");
 
